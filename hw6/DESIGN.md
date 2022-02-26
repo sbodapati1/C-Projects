@@ -13,6 +13,8 @@ The function names for this program were given and we need to fill them in. The 
 
 // This function loops over the vocabulary and returns the number of words in which that particular letter occurs. So if there are 15 words containing the letter 'x' for the particular vocabulary, then this function will return 15.
 
+```
+
 int score_letter(char letter, char **vocabulary, size_t num_words) {
 
   initialize count;
@@ -24,8 +26,11 @@ int score_letter(char letter, char **vocabulary, size_t num_words) {
   return count;
 }
 
+```
 
 // This function calculates the score for a given word, where the letter_scores array has already been filled out and has a length of 26. Slot 0 contains the score for 'a', and slot 25 contains the score for 'z'. The score for a word is the sum of all of the letter scores for unique letters in the word. So if the letter 'e' occurs three times, it only contributes to the score once.
+
+```
 
 int score_word(char *word, int *letter_scores) {
 
@@ -58,17 +63,23 @@ int score_word(char *word, int *letter_scores) {
   return count;
   }
 
+```
+
 // This functions returns the optimum guess, based on our heuristic. This one was given and doesn't need to be changed.
 
+```
 char *get_guess(char **vocabulary, size_t num_words) {
 	
 	GIVEN FUNCTION;
 
 }
 
+```
 
 // This function filters down the vocabulary based on the knowledge that the specified letter *does not occur* in the secret word. So for any of the words in the vocabulary that do contain that letter, their pointers are freed and set to NULL. It returns the number of words that have been filtered from the vocabulary.
 
+```
+	
 size_t filter_vocabulary_gray(char letter, char **vocabulary,
                               size_t num_words) {
 
@@ -87,7 +98,11 @@ size_t filter_vocabulary_gray(char letter, char **vocabulary,
 
 }
 
+```
+
 // This function filters down the vocabulary based on the knowledge that the specified letter occurs in the word, but not at this particular position. It removes any words that either don't contain the letter at all, or do contain it, but not at the specified position. It returns the number of words that have been filtered from the vocabulary.
+
+```
 
 size_t filter_vocabulary_yellow(char letter, int position, char **vocabulary,
                                 size_t num_words) {
@@ -110,8 +125,11 @@ size_t filter_vocabulary_yellow(char letter, int position, char **vocabulary,
 
 }
 
+```
 
 // This function filters down the vocabulary based on the knowledge that the specified letter *definitely* occurs as the specified position. So remove any word that does not contain, for the specified position, the specified letter. It returns the number of words that have been filtered from the vocabulary.
+
+```
 
 size_t filter_vocabulary_green(char letter, int position, char **vocabulary,
                                size_t num_words) {
@@ -126,7 +144,11 @@ size_t filter_vocabulary_green(char letter, int position, char **vocabulary,
 
 }
 
+```
+
 // This function frees each of the strings in the vocabulary, as well as the pointer vocabulary (which points to an array of char *).
+
+```
 
 void free_vocabulary(char **vocabulary, size_t num_words) {
 	GIVEN FUNCTION
